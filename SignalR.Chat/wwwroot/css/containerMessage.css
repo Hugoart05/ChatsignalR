@@ -1,0 +1,18 @@
+﻿
+.chat-messages{
+    height: 75vh!important;
+}
+.message-input {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgb(224, 222, 222);
+    border-radius: 0!important;
+    outline: none;
+    width: 100%;
+}
+
+.blur {
+    backdrop-filter: blur(1.5px) !important;
+    border: 1px solid rgb(202 202 202);
+    border-radius: 15px !important;
+}

@@ -1,0 +1,32 @@
+﻿@model LoginViewModel
+@{
+    Layout = "LoginLayout";
+}
+
+<div class="container-fluid d-flex flex-column align-items-center pt-4 bg-primary" style="height: 100vh; background-image:url(https://cdn.wallpapersafari.com/62/64/f8GOST.png);background-repeat: no-repeat;background-size:cover">
+    @if (ViewData.ModelState.ErrorCount > 0)
+    {
+    }
+    <form class=" gap-3 border-1 border-secondary d-flex flex-column align-items-center" style="width: 320px!important;height: 350px" asp-action="FazerLogin" asp-controller="Account">
+        <div>
+            <h1 class="text-light">
+                <i class="bi bi-whatsapp" style="font-size:50pt;"></i>
+            </h1>
+        </div>
+        <div class="row">
+            <label class="col-12 text-light">Email</label>
+            <input class="col-12 form-control inputDefault" asp-for="@Model.Email" />
+        </div>
+        <div class="row">
+            <label class="col-12 text-light">Senha</label>
+            <input class="col-12 form-control inputDefault" type="password" asp-for="@Model.Password" />
+        </div>
+        <button class="col-12 btn btn-success">Fazer Login</button>
+        <a href="/account/registro" class="col-12 text-decoration-none text-light register-link ">É sua primeira vez ?<strong>Cadastre-se</strong></a>
+    </form>
+</div>
+
+@section Styles{
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
+

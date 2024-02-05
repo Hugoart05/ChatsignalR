@@ -1,0 +1,41 @@
+﻿@using SignalR.Chat.ViewModels
+@model RegistroViewModel
+@{
+    Layout = "LoginLayout";
+}
+
+<div class="container-fluid d-flex flex-column align-items-center pt-4 bg-primary" style="height: 100vh; background-image:url(https://cdn.wallpapersafari.com/62/64/f8GOST.png);background-repeat: no-repeat;background-size:cover">
+    @if(Model != null)
+    {
+        <div class="alert-danger rounded-1 p-3 position-absolute " style="top: 150px;">
+            <span class="text-danger">@Model.Message</span>
+        </div>
+    }
+    <form class=" gap-3 border-1 border-secondary d-flex flex-column align-items-center" style="width: 320px!important;height: 350px" asp-action="Registrar" asp-controller="Account">
+        <div>
+            <h1 class="text-light">
+                <i class="bi bi-whatsapp" style="font-size:50pt;"></i>
+            </h1>
+        </div>
+        <div class="row">
+            <label class="col-12 text-light">Nome</label>
+            <input class="col-12 form-control inputDefault" asp-for="@Model.Nome" />
+        </div>
+        <div class="row">
+            <label class="col-12 text-light">Email</label>
+            <input class="col-12 form-control inputDefault" asp-for="@Model.Email" />
+        </div>
+        <div class="row">
+            <label class="col-12 text-light">Senha</label>
+            <input class="col-12 form-control inputDefault" type="password" asp-for="@Model.Password" />
+        </div>
+        
+        <button class="col-12 btn btn-success">Fazer Login</button>
+        <a class="link-light text-decoration-none gap-1" href="/account"><i class="bi bi-backspace"></i> Ir para login </a>
+    </form>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/login.css" asp-append-version="true" />
+}
+
